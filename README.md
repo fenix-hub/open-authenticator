@@ -14,5 +14,6 @@ Open source, offline, multiplatform two-factor authenticator software. Alternati
 - [x] Read 2fa QR from image
 - [x] Frontend improvements
 - [ ] Android, iOS and Mac support
+- [ ] Improve offline security
 
 
