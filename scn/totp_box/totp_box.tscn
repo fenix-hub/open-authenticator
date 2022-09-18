@@ -1,0 +1,341 @@
+[gd_scene load_steps=16 format=3 uid="uid://bprjj5r60x3a7"]
+
+[ext_resource type="Script" path="res://scn/totp_box/totp_box.gd" id="1_mv1jd"]
+[ext_resource type="Texture2D" uid="uid://cnta36fnp7o2d" path="res://assets/img/logos/anon.svg" id="2_6xb2w"]
+[ext_resource type="Texture2D" uid="uid://buyjpq7nx35ae" path="res://assets/img/circular_progress/back.png" id="2_xsl30"]
+[ext_resource type="Texture2D" uid="uid://c8rsm7jfmtaib" path="res://assets/img/circular_progress/progress.png" id="3_eq71w"]
+[ext_resource type="Texture2D" uid="uid://cn2o4o4noye2r" path="res://assets/img/icons/visibility/1x/baseline_visibility_white_24dp.png" id="5_0ijeo"]
+[ext_resource type="Texture2D" uid="uid://duwbyyd2qm17j" path="res://assets/img/icons/copy/1x/baseline_content_copy_white_24dp.png" id="5_v1m52"]
+[ext_resource type="Texture2D" uid="uid://buvijajxx0f6p" path="res://assets/img/icons/visibility-off/1x/baseline_visibility_off_white_24dp.png" id="6_02ltn"]
+[ext_resource type="StyleBox" uid="uid://bb8p7t0x5qhla" path="res://assets/styles/button/normal.tres" id="7_kk0f8"]
+[ext_resource type="StyleBox" uid="uid://dhq6nbnj4lv7e" path="res://assets/styles/button/hover_2.tres" id="8_uea1m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ft3x"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.184314, 0.192157, 0.211765, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+anti_aliasing_size = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rui6b"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_k55am"]
+font_color = Color(0.627451, 0.627451, 0.627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5dem"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25vx8"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+bg_color = Color(0.12549, 0.133333, 0.145098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ibumk"]
+line_spacing = 0.0
+font_size = 30
+
+[node name="TOTPBoxContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ft3x")
+script = ExtResource("1_mv1jd")
+
+[node name="TOTPBox" type="VBoxContainer" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1127.0
+offset_bottom = 623.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="HeaderBox" type="HBoxContainer" parent="TOTPBox"]
+offset_right = 1102.0
+offset_bottom = 80.0
+theme_override_constants/separation = 30
+
+[node name="IssuerLogo" type="TextureRect" parent="TOTPBox/HeaderBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2i(70, 70)
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 75.0
+size_flags_vertical = 4
+texture = ExtResource("2_6xb2w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AccountBox" type="VBoxContainer" parent="TOTPBox/HeaderBox"]
+offset_left = 100.0
+offset_top = 8.0
+offset_right = 992.0
+offset_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="IssuerLbl" type="Label" parent="TOTPBox/HeaderBox/AccountBox"]
+unique_name_in_owner = true
+offset_right = 892.0
+offset_bottom = 37.0
+text = "Issuer"
+label_settings = SubResource("LabelSettings_rui6b")
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="UserLbl" type="Label" parent="TOTPBox/HeaderBox/AccountBox"]
+unique_name_in_owner = true
+offset_top = 37.0
+offset_right = 892.0
+offset_bottom = 63.0
+text = "user@email.test"
+label_settings = SubResource("LabelSettings_k55am")
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="SecsRemaining" type="TextureProgressBar" parent="TOTPBox/HeaderBox"]
+unique_name_in_owner = true
+offset_left = 1022.0
+offset_right = 1102.0
+offset_bottom = 80.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 30.0
+value = 15.0
+fill_mode = 4
+nine_patch_stretch = true
+stretch_margin_left = 80
+stretch_margin_top = 80
+texture_under = ExtResource("2_xsl30")
+texture_progress = ExtResource("3_eq71w")
+tint_under = Color(0.12549, 0.133333, 0.145098, 1)
+tint_progress = Color(0, 0.768627, 0.45098, 1)
+
+[node name="Label" type="Label" parent="TOTPBox/HeaderBox/SecsRemaining"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_u5dem")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BodyBox" type="HBoxContainer" parent="TOTPBox"]
+offset_top = 95.0
+offset_right = 1102.0
+offset_bottom = 139.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VisibilityBtn" type="CheckButton" parent="TOTPBox/BodyBox"]
+custom_minimum_size = Vector2i(30, 0)
+offset_left = 217.0
+offset_right = 261.0
+offset_bottom = 44.0
+size_flags_vertical = 4
+tooltip_text = "Hide/Show this code"
+theme_override_icons/checked = ExtResource("5_0ijeo")
+theme_override_icons/unchecked = ExtResource("6_02ltn")
+theme_override_styles/normal = ExtResource("7_kk0f8")
+theme_override_styles/pressed = ExtResource("7_kk0f8")
+theme_override_styles/hover = ExtResource("8_uea1m")
+alignment = 1
+icon_alignment = 1
+
+[node name="TOTPDigits" type="HBoxContainer" parent="TOTPBox/BodyBox"]
+unique_name_in_owner = true
+offset_left = 281.0
+offset_right = 541.0
+offset_bottom = 44.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="1" type="Label" parent="TOTPBox/BodyBox/TOTPDigits"]
+custom_minimum_size = Vector2i(35, 0)
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "0"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="TOTPBox/BodyBox/TOTPDigits"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 45.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "0"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="TOTPBox/BodyBox/TOTPDigits"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 90.0
+offset_top = 1.0
+offset_right = 125.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "0"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="TOTPBox/BodyBox/TOTPDigits"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 135.0
+offset_top = 1.0
+offset_right = 170.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "0"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Label" parent="TOTPBox/BodyBox/TOTPDigits"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 180.0
+offset_top = 1.0
+offset_right = 215.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "0"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Label" parent="TOTPBox/BodyBox/TOTPDigits"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 225.0
+offset_top = 1.0
+offset_right = 260.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "0"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TOTPDigitsHidden" type="HBoxContainer" parent="TOTPBox/BodyBox"]
+unique_name_in_owner = true
+offset_left = 561.0
+offset_right = 821.0
+offset_bottom = 44.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="1" type="Label" parent="TOTPBox/BodyBox/TOTPDigitsHidden"]
+custom_minimum_size = Vector2i(35, 0)
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "*"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="TOTPBox/BodyBox/TOTPDigitsHidden"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 45.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "*"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="TOTPBox/BodyBox/TOTPDigitsHidden"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 90.0
+offset_top = 1.0
+offset_right = 125.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "*"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="TOTPBox/BodyBox/TOTPDigitsHidden"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 135.0
+offset_top = 1.0
+offset_right = 170.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "*"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Label" parent="TOTPBox/BodyBox/TOTPDigitsHidden"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 180.0
+offset_top = 1.0
+offset_right = 215.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "*"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Label" parent="TOTPBox/BodyBox/TOTPDigitsHidden"]
+custom_minimum_size = Vector2i(35, 0)
+offset_left = 225.0
+offset_top = 1.0
+offset_right = 260.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_25vx8")
+text = "*"
+label_settings = SubResource("LabelSettings_ibumk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CopyBtn" type="Button" parent="TOTPBox/BodyBox"]
+custom_minimum_size = Vector2i(30, 0)
+offset_left = 841.0
+offset_right = 885.0
+offset_bottom = 44.0
+size_flags_vertical = 4
+tooltip_text = "Copy this code"
+theme_override_styles/normal = ExtResource("7_kk0f8")
+theme_override_styles/hover = ExtResource("8_uea1m")
+icon = ExtResource("5_v1m52")
+icon_alignment = 1
+
+[node name="Timer" type="Timer" parent="TOTPBox"]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="toggled" from="TOTPBox/BodyBox/VisibilityBtn" to="." method="_on_visibility_btn_toggled"]
+[connection signal="pressed" from="TOTPBox/BodyBox/CopyBtn" to="." method="_on_copy_btn_pressed"]

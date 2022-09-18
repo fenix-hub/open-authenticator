@@ -1,0 +1,359 @@
+[gd_scene load_steps=15 format=3 uid="uid://bv4lkpb3dg20j"]
+
+[ext_resource type="Script" path="res://scn/main/MarginContainer.gd" id="1_rv7xd"]
+[ext_resource type="Texture2D" uid="uid://ckd6dtu1tlb3p" path="res://assets/img/icons/qr_code_scanner/2x/baseline_qr_code_scanner_white_36dp.png" id="2_1g871"]
+[ext_resource type="StyleBox" uid="uid://bb8p7t0x5qhla" path="res://assets/styles/button/normal.tres" id="2_dw1xx"]
+[ext_resource type="Texture2D" uid="uid://c2b6helnqj6cw" path="res://assets/img/icons/create/2x/baseline_create_white_36dp.png" id="3_68tqj"]
+[ext_resource type="StyleBox" uid="uid://demuxbgcdpkai" path="res://assets/styles/button/hover.tres" id="3_eujwo"]
+[ext_resource type="Texture2D" uid="uid://c0ncs1kb7usyk" path="res://assets/img/droparea.png" id="4_t0513"]
+[ext_resource type="Script" path="res://scn/add_account_container/drop_area.gd" id="5_0dbym"]
+[ext_resource type="Texture2D" uid="uid://fpymi1pocg0q" path="res://assets/img/icons/file_upload/1x/baseline_file_upload_white_24dp.png" id="6_wixn0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c85j"]
+bg_color = Color(0, 0, 0, 0.901961)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hu5e2"]
+color = Color(0.72549, 0.72549, 0.72549, 1)
+grow_begin = -25.0
+grow_end = -45.0
+thickness = 3
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0n6x"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.121569, 0.129412, 0.141176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0.117647)
+shadow_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_iuxni"]
+font_size = 21
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eg3uh"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("4_t0513")
+region_rect = Rect2(0, 0, 200, 200)
+modulate_color = Color(0.521569, 0.521569, 0.521569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivkki"]
+font_size = 12
+
+[node name="AddAccountContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0c85j")
+script = ExtResource("1_rv7xd")
+
+[node name="ButtonsBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 435.0
+offset_top = 263.0
+offset_right = 716.0
+offset_bottom = 385.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsBox"]
+layout_mode = 2
+offset_right = 124.0
+offset_bottom = 122.0
+
+[node name="ImportQrCodeBtn" type="Button" parent="ButtonsBox/VBoxContainer"]
+layout_mode = 2
+offset_left = 16.0
+offset_right = 108.0
+offset_bottom = 92.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("2_dw1xx")
+theme_override_styles/hover = ExtResource("3_eujwo")
+icon = ExtResource("2_1g871")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="ButtonsBox/VBoxContainer"]
+layout_mode = 2
+offset_top = 96.0
+offset_right = 124.0
+offset_bottom = 122.0
+text = "Import QR Code"
+
+[node name="VSeparator" type="VSeparator" parent="ButtonsBox"]
+layout_mode = 2
+offset_left = 144.0
+offset_right = 154.0
+offset_bottom = 122.0
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_hu5e2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ButtonsBox"]
+layout_mode = 2
+offset_left = 174.0
+offset_right = 281.0
+offset_bottom = 122.0
+
+[node name="AddManuallyBtn" type="Button" parent="ButtonsBox/VBoxContainer2"]
+layout_mode = 2
+offset_left = 7.0
+offset_right = 99.0
+offset_bottom = 92.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("2_dw1xx")
+theme_override_styles/hover = ExtResource("3_eujwo")
+icon = ExtResource("3_68tqj")
+icon_alignment = 1
+
+[node name="Label2" type="Label" parent="ButtonsBox/VBoxContainer2"]
+layout_mode = 2
+offset_top = 96.0
+offset_right = 107.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Add manually"
+
+[node name="AddManually" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 425.0
+offset_top = 207.0
+offset_right = 727.0
+offset_bottom = 440.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0n6x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddManually"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 287.0
+offset_bottom = 223.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="AddManually/VBoxContainer"]
+layout_mode = 2
+offset_right = 272.0
+offset_bottom = 33.0
+text = "New Account"
+label_settings = SubResource("LabelSettings_iuxni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="AddManually/VBoxContainer"]
+layout_mode = 2
+offset_top = 43.0
+offset_right = 272.0
+offset_bottom = 47.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddManually/VBoxContainer"]
+layout_mode = 2
+offset_top = 57.0
+offset_right = 272.0
+offset_bottom = 158.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddManually/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+offset_right = 68.0
+offset_bottom = 101.0
+alignment = 1
+
+[node name="Label" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 2.0
+offset_right = 68.0
+offset_bottom = 28.0
+size_flags_vertical = 6
+text = "Issuer:"
+
+[node name="Label2" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 37.0
+offset_right = 68.0
+offset_bottom = 63.0
+size_flags_vertical = 6
+text = "Secret:"
+
+[node name="Label3" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 72.0
+offset_right = 68.0
+offset_bottom = 98.0
+size_flags_vertical = 6
+text = "Account:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddManually/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2i(200, 0)
+layout_mode = 2
+offset_left = 72.0
+offset_right = 272.0
+offset_bottom = 101.0
+alignment = 1
+
+[node name="Issuer" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 31.0
+
+[node name="Account" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 66.0
+
+[node name="Secret" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 70.0
+offset_right = 200.0
+offset_bottom = 101.0
+
+[node name="HSeparator2" type="HSeparator" parent="AddManually/VBoxContainer"]
+layout_mode = 2
+offset_top = 168.0
+offset_right = 272.0
+offset_bottom = 172.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AddManually/VBoxContainer"]
+layout_mode = 2
+offset_top = 182.0
+offset_right = 272.0
+offset_bottom = 213.0
+
+[node name="CancelBtn" type="Button" parent="AddManually/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 31.0
+text = "Cancel"
+
+[node name="AddBtn" type="Button" parent="AddManually/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+offset_left = 233.0
+offset_right = 272.0
+offset_bottom = 31.0
+size_flags_horizontal = 10
+text = "Add"
+
+[node name="ImportQR" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 461.0
+offset_top = 158.0
+offset_right = 691.0
+offset_bottom = 490.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0n6x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ImportQR"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 215.0
+offset_bottom = 322.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ImportQR/VBoxContainer"]
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 33.0
+text = "Import QR Code"
+label_settings = SubResource("LabelSettings_iuxni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ImportQR/VBoxContainer"]
+layout_mode = 2
+offset_top = 43.0
+offset_right = 200.0
+offset_bottom = 47.0
+
+[node name="DropArea" type="PanelContainer" parent="ImportQR/VBoxContainer"]
+custom_minimum_size = Vector2i(200, 200)
+layout_mode = 2
+offset_top = 57.0
+offset_right = 200.0
+offset_bottom = 257.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_eg3uh")
+script = ExtResource("5_0dbym")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ImportQR/VBoxContainer/DropArea"]
+layout_mode = 2
+offset_left = 59.0
+offset_top = 78.0
+offset_right = 140.0
+offset_bottom = 122.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ImportQR/VBoxContainer/DropArea/VBoxContainer"]
+layout_mode = 2
+offset_right = 81.0
+offset_bottom = 24.0
+texture = ExtResource("6_wixn0")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ImportQR/VBoxContainer/DropArea/VBoxContainer"]
+layout_mode = 2
+offset_top = 24.0
+offset_right = 81.0
+offset_bottom = 44.0
+text = "Drop QR Here"
+label_settings = SubResource("LabelSettings_ivkki")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ImportQR/VBoxContainer"]
+layout_mode = 2
+offset_top = 267.0
+offset_right = 200.0
+offset_bottom = 271.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ImportQR/VBoxContainer"]
+layout_mode = 2
+offset_top = 281.0
+offset_right = 200.0
+offset_bottom = 312.0
+
+[node name="CancelBtn" type="Button" parent="ImportQR/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 31.0
+text = "Cancel"
+
+[node name="AddBtn" type="Button" parent="ImportQR/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+offset_left = 161.0
+offset_right = 200.0
+offset_bottom = 31.0
+size_flags_horizontal = 10
+text = "Add"
+
+[connection signal="gui_input" from="." to="." method="_on_add_account_container_gui_input"]
+[connection signal="pressed" from="ButtonsBox/VBoxContainer/ImportQrCodeBtn" to="." method="_on_import_qr_code_btn_pressed"]
+[connection signal="pressed" from="ButtonsBox/VBoxContainer2/AddManuallyBtn" to="." method="_on_add_manually_btn_pressed"]
+[connection signal="pressed" from="AddManually/VBoxContainer/HBoxContainer2/CancelBtn" to="." method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="AddManually/VBoxContainer/HBoxContainer2/AddBtn" to="." method="_on_add_btn_pressed"]
+[connection signal="account_read" from="ImportQR/VBoxContainer/DropArea" to="." method="_on_drop_area_account_read"]
+[connection signal="pressed" from="ImportQR/VBoxContainer/HBoxContainer2/CancelBtn" to="." method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="ImportQR/VBoxContainer/HBoxContainer2/AddBtn" to="." method="_on_add_btn_pressed"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://nvqsr1skguq5"]
+
+[ext_resource type="Script" path="res://scn/alert/alert.gd" id="1_awbca"]
+[ext_resource type="Texture2D" uid="uid://bgqm5n8i0w2l2" path="res://assets/img/icons/alert/1x/baseline_info_outline_white_24dp.png" id="2_u0et5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk01s"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0.0392157)
+shadow_size = 10
+anti_aliasing_size = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_31k2k"]
+font_size = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rpnla"]
+
+[node name="Alert" type="PanelContainer"]
+clip_children = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_right = 184.0
+offset_bottom = 35.0
+grow_horizontal = 2
+pivot_offset = Vector2(185, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_mk01s")
+script = ExtResource("1_awbca")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 368.0
+offset_bottom = 35.0
+color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 368.0
+offset_bottom = 35.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 358.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+offset_right = 24.0
+offset_bottom = 24.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_u0et5")
+stretch_mode = 3
+
+[node name="Message" type="Label" parent="MarginContainer/HBoxContainer"]
+offset_left = 28.0
+offset_top = 1.0
+offset_right = 348.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+label_settings = SubResource("LabelSettings_31k2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Progress" type="ProgressBar" parent="."]
+offset_right = 368.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_rpnla")
+fill_mode = 1
+show_percentage = false

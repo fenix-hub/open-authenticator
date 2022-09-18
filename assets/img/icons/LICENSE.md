@@ -1,0 +1,1 @@
+ALL ICONS IN THIS FOLDER ARE TAKEN FROM [Google - Material Icons](https://fonts.google.com/icons) AND USED UNDER [Apache 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE) LICENSE.
