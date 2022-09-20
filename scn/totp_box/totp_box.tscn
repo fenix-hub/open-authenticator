@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bprjj5r60x3a7"]
+[gd_scene load_steps=15 format=3 uid="uid://bprjj5r60x3a7"]
 
 [ext_resource type="Script" path="res://scn/totp_box/totp_box.gd" id="1_mv1jd"]
 [ext_resource type="Texture2D" uid="uid://cnta36fnp7o2d" path="res://assets/img/logos/anon.svg" id="2_6xb2w"]
 [ext_resource type="Texture2D" uid="uid://buyjpq7nx35ae" path="res://assets/img/circular_progress/back.png" id="2_xsl30"]
 [ext_resource type="Texture2D" uid="uid://c8rsm7jfmtaib" path="res://assets/img/circular_progress/progress.png" id="3_eq71w"]
-[ext_resource type="Texture2D" uid="uid://cn2o4o4noye2r" path="res://assets/img/icons/visibility/1x/baseline_visibility_white_24dp.png" id="5_0ijeo"]
+[ext_resource type="PackedScene" uid="uid://b0ogqi28tlf3c" path="res://scn/components/VisibilityBtn.tscn" id="5_llej7"]
 [ext_resource type="Texture2D" uid="uid://duwbyyd2qm17j" path="res://assets/img/icons/copy/1x/baseline_content_copy_white_24dp.png" id="5_v1m52"]
-[ext_resource type="Texture2D" uid="uid://buvijajxx0f6p" path="res://assets/img/icons/visibility-off/1x/baseline_visibility_off_white_24dp.png" id="6_02ltn"]
 [ext_resource type="StyleBox" uid="uid://bb8p7t0x5qhla" path="res://assets/styles/button/normal.tres" id="7_kk0f8"]
 [ext_resource type="StyleBox" uid="uid://dhq6nbnj4lv7e" path="res://assets/styles/button/hover_2.tres" id="8_uea1m"]
 
@@ -148,20 +147,7 @@ offset_bottom = 139.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VisibilityBtn" type="CheckButton" parent="TOTPBox/BodyBox"]
-custom_minimum_size = Vector2i(30, 0)
-offset_left = 217.0
-offset_right = 261.0
-offset_bottom = 44.0
-size_flags_vertical = 4
-tooltip_text = "Hide/Show this code"
-theme_override_icons/checked = ExtResource("5_0ijeo")
-theme_override_icons/unchecked = ExtResource("6_02ltn")
-theme_override_styles/normal = ExtResource("7_kk0f8")
-theme_override_styles/pressed = ExtResource("7_kk0f8")
-theme_override_styles/hover = ExtResource("8_uea1m")
-alignment = 1
-icon_alignment = 1
+[node name="VisibilityBtn" parent="TOTPBox/BodyBox" instance=ExtResource("5_llej7")]
 
 [node name="TOTPDigits" type="HBoxContainer" parent="TOTPBox/BodyBox"]
 unique_name_in_owner = true

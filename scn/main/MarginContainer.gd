@@ -26,15 +26,18 @@ func reset() -> void:
     import_qr_pnl.hide()
 
 func _on_add_btn_pressed() -> void:
+    var label: String = %Label.get_text()
     var issuer: String = %Issuer.get_text()
     var account: String = %Account.get_text()
     var secret: String = %Secret.get_text()
     
+    
+    %Label.clear()
     %Issuer.clear()
     %Account.clear()
     %Secret.clear()
     
-    var new_account: Account = Account.new(issuer+":"+account, issuer, account, secret)
+    var new_account: Account = Account.new(label, issuer, account, secret)
     AccountsManager.save_account(new_account)
     add_account.emit(new_account)
     
@@ -67,3 +70,7 @@ func _on_add_account_container_gui_input(event: InputEvent) -> void:
     if event.is_pressed():
         reset()
         hide()
+
+
+func _on_visibility_btn_toggled(button_pressed: bool) -> void:
+    %Secret.set_secret(button_pressed)

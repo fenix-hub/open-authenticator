@@ -1,4 +1,4 @@
-extends PanelContainer
+extends NinePatchRect
 
 signal account_read(account: Account)
 
