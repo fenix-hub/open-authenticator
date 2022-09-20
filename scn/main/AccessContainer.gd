@@ -31,8 +31,7 @@ func unlock(text: String) -> void:
         unlock_failed.emit("Secret must be at least of 8 characters")
         return
     
-    var secret: String = text.sha256_text()
-    if not AccountsManager.load_accounts(secret):
+    if not AccountsManager.load_accounts(text):
         unlock_failed.emit("Invalid secret")
         return
     
