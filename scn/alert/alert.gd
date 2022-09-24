@@ -24,10 +24,10 @@ const colors: PackedColorArray = [
 ]
 
 var icons: Array[Texture2D] = [
-    load("res://assets/img/icons/done/1x/baseline_done_white_24dp.png") as Texture2D,
-    load("res://assets/img/icons/alert/1x/baseline_info_outline_white_24dp.png") as Texture2D,
-    load("res://assets/img/icons/error/1x/baseline_error_outline_white_24dp.png") as Texture2D,
-    load("res://assets/img/icons/clear/1x/baseline_clear_white_24dp.png") as Texture2D
+    load("res://assets/img/icons/eva/checkmark-circle-2.svg") as Texture2D,
+    load("res://assets/img/icons/eva/info.svg") as Texture2D,
+    load("res://assets/img/icons/eva/alert-circle.svg") as Texture2D,
+    load("res://assets/img/icons/eva/alert-triangle.svg") as Texture2D
 ]
 
 var type: Type = Type.WARNING
@@ -87,3 +87,7 @@ func set_type(type: Type) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     pass
+
+
+func _on_close_btn_pressed() -> void:
+    queue_free()

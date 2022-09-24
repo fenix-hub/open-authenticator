@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://xyprc3103eeu"]
+[gd_scene load_steps=4 format=3 uid="uid://pon5j0lsdfbm"]
 
 [ext_resource type="Script" path="res://scn/main/AccessContainer.gd" id="1_50b7o"]
-[ext_resource type="Texture2D" uid="uid://gdkxly1qdp4c" path="res://assets/img/icons/lock_open/1x/baseline_lock_open_white_24dp.png" id="2_qnd6s"]
+[ext_resource type="Texture2D" uid="uid://gdkxly1qdp4c" path="res://assets/img/icons/google-icons/lock_open/1x/baseline_lock_open_white_24dp.png" id="2_qnd6s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wq4r"]
 bg_color = Color(0.12549, 0.133333, 0.145098, 1)
