@@ -1,0 +1,8 @@
+[configuration]
+
+entry_symbol = "qrnative_init"
+
+[libraries]
+
+windows.x86_64.debug = "qrnative/libqrnative.windows.debug.x86_64.dll"
+windows.x86_64.release = "qrnative/libqrnative.windows.release.x86_64.dll"

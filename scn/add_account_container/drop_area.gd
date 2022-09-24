@@ -2,7 +2,7 @@ extends NinePatchRect
 
 signal account_read(account: Account)
 
-var qr_reader: QRReader = QRReader.new()
+
 var image: Image = Image.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -20,12 +20,12 @@ func on_files_dropped(files: PackedStringArray) -> void:
     
     image.convert(Image.FORMAT_RGB8)
     
-    qr_reader.decode(image.get_data(), image.get_width(), image.get_height())
-    if not qr_reader.is_valid():
+    var decode_result : QRDecodeResult = QRReader.decode_bytes(image.get_data(), image.get_width(), image.get_height()) as QRDecodeResult
+    if not decode_result.is_valid():
         AlertManager.alert_error("Could not read QR code")
         return
     
-    account_read.emit(extract_account(qr_reader.get_content()))
+    account_read.emit(extract_account(decode_result.get_content()))
 
 func extract_account(qr_code: String) -> Account:
     if not qr_code.begins_with("otpauth://totp/"):
