@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://nvqsr1skguq5"]
+[gd_scene load_steps=7 format=3 uid="uid://crcmoqfatawgn"]
 
 [ext_resource type="Script" path="res://scn/alert/alert.gd" id="1_awbca"]
-[ext_resource type="Texture2D" uid="uid://bgqm5n8i0w2l2" path="res://assets/img/icons/alert/1x/baseline_info_outline_white_24dp.png" id="2_u0et5"]
+[ext_resource type="Texture2D" uid="uid://b7stks1ca2vv3" path="res://assets/img/icons/eva/alert-circle.svg" id="2_8vuuq"]
+[ext_resource type="Texture2D" uid="uid://pa7pe84wrudl" path="res://assets/img/icons/google-icons/clear/1x/baseline_clear_white_24dp.png" id="3_hffde"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk01s"]
 content_margin_left = 0.0
@@ -30,7 +31,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -184.0
 offset_right = 184.0
-offset_bottom = 35.0
+offset_bottom = 45.0
 grow_horizontal = 2
 pivot_offset = Vector2(185, 0)
 theme_override_styles/panel = SubResource("StyleBoxFlat_mk01s")
@@ -38,51 +39,77 @@ script = ExtResource("1_awbca")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
 offset_right = 368.0
-offset_bottom = 35.0
+offset_bottom = 45.0
 color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
 offset_right = 368.0
-offset_bottom = 35.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
+offset_bottom = 45.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-offset_left = 10.0
-offset_top = 5.0
+layout_mode = 2
+offset_left = 15.0
+offset_top = 10.0
 offset_right = 358.0
-offset_bottom = 29.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-offset_right = 24.0
-offset_bottom = 24.0
+custom_minimum_size = Vector2i(20, 0)
+layout_mode = 2
+offset_right = 20.0
+offset_bottom = 25.0
 size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_u0et5")
-stretch_mode = 3
+texture = ExtResource("2_8vuuq")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Message" type="Label" parent="MarginContainer/HBoxContainer"]
-offset_left = 28.0
-offset_top = 1.0
-offset_right = 348.0
-offset_bottom = 23.0
+layout_mode = 2
+offset_left = 30.0
+offset_right = 313.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
+text = "This is a plain toast!"
 label_settings = SubResource("LabelSettings_31k2k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CloseBtn" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2i(20, 0)
+layout_mode = 2
+offset_left = 323.0
+offset_right = 343.0
+offset_bottom = 25.0
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_hffde")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [node name="Progress" type="ProgressBar" parent="."]
+layout_mode = 2
+offset_top = 41.0
 offset_right = 368.0
-offset_bottom = 4.0
+offset_bottom = 45.0
+size_flags_vertical = 8
 theme_override_styles/background = SubResource("StyleBoxEmpty_rpnla")
 fill_mode = 1
 show_percentage = false
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]

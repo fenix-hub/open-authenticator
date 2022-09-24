@@ -8,8 +8,8 @@ signal accounts_read(accounts: Dictionary)
 var accounts_file: ConfigFile = ConfigFile.new()
 var accounts_file_path: String = "user://.accounts"
 
-var icon_disabled: Texture2D = load("res://assets/img/icons/lock/1x/baseline_lock_white_24dp.png")
-var icon_enabled: Texture2D = load("res://assets/img/icons/lock_open/1x/baseline_lock_open_white_24dp.png")
+var icon_disabled: Texture2D = load("res://assets/img/icons/google-icons/lock/1x/baseline_lock_white_24dp.png")
+var icon_enabled: Texture2D = load("res://assets/img/icons/google-icons/lock_open/1x/baseline_lock_open_white_24dp.png")
 
 var hotp_generator: HOTPGenerator = HOTPGenerator.new(10)
 

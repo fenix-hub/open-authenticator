@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://m333ri8ayej4"]
+[gd_scene load_steps=11 format=3 uid="uid://duhxbssywuca6"]
 
 [ext_resource type="FontFile" uid="uid://cwajp0vatym2t" path="res://assets/fonts/Nunito/Nunito-VariableFont_wght.ttf" id="1_7tv6h"]
 [ext_resource type="Script" path="res://scn/main/Control.gd" id="1_r4mdu"]
-[ext_resource type="Texture2D" uid="uid://dqu2dy11pqmvh" path="res://assets/img/icons/add_person/2x/baseline_person_add_white_24dp.png" id="3_1jkb5"]
+[ext_resource type="Texture2D" uid="uid://dqu2dy11pqmvh" path="res://assets/img/icons/google-icons/add_person/2x/baseline_person_add_white_24dp.png" id="3_1jkb5"]
 [ext_resource type="StyleBox" uid="uid://bb8p7t0x5qhla" path="res://assets/styles/button/normal.tres" id="3_5uoef"]
-[ext_resource type="PackedScene" uid="uid://bv4lkpb3dg20j" path="res://scn/add_account_container/add_account_container.tscn" id="3_p8v14"]
+[ext_resource type="PackedScene" uid="uid://dkpv5dx86f2rg" path="res://scn/add_account_container/add_account_container.tscn" id="3_p8v14"]
 [ext_resource type="StyleBox" uid="uid://demuxbgcdpkai" path="res://assets/styles/button/hover.tres" id="4_3en2u"]
-[ext_resource type="PackedScene" uid="uid://xyprc3103eeu" path="res://scn/access_container/AccessContainer.tscn" id="4_lfa7n"]
+[ext_resource type="PackedScene" uid="uid://pon5j0lsdfbm" path="res://scn/access_container/AccessContainer.tscn" id="4_lfa7n"]
 
 [sub_resource type="FontVariation" id="FontVariation_yatd6"]
 base_font = ExtResource("1_7tv6h")
