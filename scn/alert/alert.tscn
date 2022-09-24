@@ -39,13 +39,11 @@ script = ExtResource("1_awbca")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 2
 offset_right = 368.0
 offset_bottom = 45.0
 color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
 offset_right = 368.0
 offset_bottom = 45.0
 theme_override_constants/margin_left = 15
@@ -54,7 +52,6 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
 offset_left = 15.0
 offset_top = 10.0
 offset_right = 358.0
@@ -67,7 +64,6 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2i(20, 0)
-layout_mode = 2
 offset_right = 20.0
 offset_bottom = 25.0
 size_flags_horizontal = 4
@@ -76,7 +72,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Message" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
 offset_left = 30.0
 offset_right = 313.0
 offset_bottom = 25.0
@@ -90,7 +85,6 @@ vertical_alignment = 1
 
 [node name="CloseBtn" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2i(20, 0)
-layout_mode = 2
 offset_left = 323.0
 offset_right = 343.0
 offset_bottom = 25.0
@@ -103,7 +97,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Progress" type="ProgressBar" parent="."]
-layout_mode = 2
 offset_top = 41.0
 offset_right = 368.0
 offset_bottom = 45.0

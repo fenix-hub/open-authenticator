@@ -1,8 +1,0 @@
-[configuration]
-
-entry_symbol = "qrreader_library_init"
-
-[libraries]
-
-windows.debug.x86_64 = "res://extension/qrreader/libqrreader.windows.debug.x86_64.dll"
-windows.release.x86_64 = "res://extension/qrreader/libqrreader.windows.release.x86_64.dll"
