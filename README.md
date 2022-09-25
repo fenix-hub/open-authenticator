@@ -7,6 +7,10 @@ Open source, offline, multiplatform two-factor authenticator software. Alternati
 	<img src="import_qr.png"/>
 </div>
 
+## Resources
+- Generate HOTP and TOTP with GDScript 👉 [gdscript.otp](https://github.com/fenix-hub/godot-engine.otp)
+- Read and Write QRCodes with GDScript 👉 [qrnative](https://github.com/fenix-hub/qrnative)
+
 ## Roadmap
 
 - [x] Generate offline RFC6238 compliant One Time Passwords for 2factor authentication
@@ -15,5 +19,4 @@ Open source, offline, multiplatform two-factor authenticator software. Alternati
 - [x] Frontend improvements
 - [ ] Android, iOS and Mac support
 - [ ] Improve offline security
-
 
