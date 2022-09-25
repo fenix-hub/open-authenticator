@@ -18,7 +18,7 @@ func on_files_dropped(files: PackedStringArray) -> void:
     if image.load(file_path) != OK:
         AlertManager.alert_error("Could not load image file, error: %s" % file_path.get_extension())
     
-    var decode_result : QRDecodeResult = QRReader.decode_image(image) as QRDecodeResult
+    var decode_result : QRDecodeResult = QRNative.decode_image(image) as QRDecodeResult
     if not decode_result.is_valid():
         AlertManager.alert_error("Could not read QR code")
         return
