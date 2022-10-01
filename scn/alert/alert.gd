@@ -26,8 +26,8 @@ const colors: PackedColorArray = [
 var icons: Array[Texture2D] = [
     load("res://assets/img/icons/eva/checkmark-circle-2.svg") as Texture2D,
     load("res://assets/img/icons/eva/info.svg") as Texture2D,
-    load("res://assets/img/icons/eva/alert-circle.svg") as Texture2D,
-    load("res://assets/img/icons/eva/alert-triangle.svg") as Texture2D
+    load("res://assets/img/icons/eva/alert-triangle.svg") as Texture2D,
+    load("res://assets/img/icons/eva/alert-circle.svg") as Texture2D
 ]
 
 var type: Type = Type.WARNING

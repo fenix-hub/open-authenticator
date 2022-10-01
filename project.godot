@@ -64,13 +64,17 @@ _global_script_class_icons={
 
 config/name="open-authenticator"
 run/main_scene="res://scn/main/control.tscn"
-config/features=PackedStringArray("4.0", "Vulkan Clustered")
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AccountsManager="*res://scn/scripts/accounts_manager.gd"
 AlertManager="*res://scn/scripts/alert_manager.gd"
+
+[display]
+
+window/handheld/orientation=1
 
 [dotnet]
 

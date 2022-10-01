@@ -21,10 +21,15 @@ func _on_button_pressed() -> void:
 
 func _on_access_container_accounts_read(accounts: Dictionary) -> void:
     for issuer_id in accounts.keys():
-        _on_add_account(accounts[issuer_id])
+        _on_add_account_container_add_account(accounts[issuer_id])
     $Container.show()
 
-func _on_add_account(account: Account) -> void:
+
+func _on_access_container_unlock_failed(message: String) -> void:
+    AlertManager.alert_error(message)
+
+
+func _on_add_account_container_add_account(account) -> void:
     for totp_box in totp_list.get_children():
         if totp_box.account.is_equal(account):
             totp_box.set_account(account)
@@ -33,7 +38,3 @@ func _on_add_account(account: Account) -> void:
     var new_totp: TOTPBoxContainer = totp_box_scn.instantiate()
     new_totp.set_account(account)
     totp_list.add_child(new_totp)
-
-func _on_access_container_unlock_failed(message: String) -> void:
-    AlertManager.alert_error(message)
-

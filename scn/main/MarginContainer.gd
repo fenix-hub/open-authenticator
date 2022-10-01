@@ -24,6 +24,7 @@ func reset() -> void:
     buttons_box.show()
     add_manually_pnl.hide()
     import_qr_pnl.hide()
+    $FileDialog.hide()
 
 func _on_add_btn_pressed() -> void:
     var label: String = %Label.get_text()
@@ -44,6 +45,7 @@ func _on_add_btn_pressed() -> void:
     reset()
     hide()
     AlertManager.alert_success("Account added!")
+
 
 func _on_import_qr_code_btn_pressed() -> void:
     import_qr_pnl.show()
@@ -67,10 +69,20 @@ func _on_drop_area_account_read(account: Account) -> void:
 
 
 func _on_add_account_container_gui_input(event: InputEvent) -> void:
-    if event.is_pressed():
-        reset()
-        hide()
+    if event is InputEventMouseButton:
+        if event.is_pressed() and event.button_index == 1:
+            reset()
+            hide()
 
 
 func _on_visibility_btn_toggled(button_pressed: bool) -> void:
     %Secret.set_secret(button_pressed)
+
+
+func _on_button_pressed() -> void:
+    $FileDialog.position = Vector2i(get_rect().size/2) - $FileDialog.get_size()/2
+    $FileDialog.show()
+
+
+func _on_file_dialog_file_selected(path: String) -> void:
+    %DropArea.on_files_dropped(PackedStringArray([path]))
