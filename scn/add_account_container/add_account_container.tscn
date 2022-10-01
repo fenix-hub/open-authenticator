@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkpv5dx86f2rg"]
+[gd_scene load_steps=18 format=3 uid="uid://cqlof67jl1gpm"]
 
 [ext_resource type="Script" path="res://scn/main/MarginContainer.gd" id="1_rv7xd"]
 [ext_resource type="Texture2D" uid="uid://ckd6dtu1tlb3p" path="res://assets/img/icons/google-icons/qr_code_scanner/2x/baseline_qr_code_scanner_white_36dp.png" id="2_1g871"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c2b6helnqj6cw" path="res://assets/img/icons/google-icons/create/2x/baseline_create_white_36dp.png" id="3_68tqj"]
 [ext_resource type="StyleBox" uid="uid://demuxbgcdpkai" path="res://assets/styles/button/hover.tres" id="3_eujwo"]
 [ext_resource type="Script" path="res://scn/add_account_container/drop_area.gd" id="5_0dbym"]
-[ext_resource type="PackedScene" path="res://scn/components/VisibilityBtn.tscn" id="6_c62wm"]
+[ext_resource type="PackedScene" uid="uid://dxpt4bpwl6ktn" path="res://scn/components/VisibilityBtn.tscn" id="6_c62wm"]
 [ext_resource type="Texture2D" uid="uid://cqme5i25o30jh" path="res://assets/img/droparea.png" id="6_k6vux"]
 [ext_resource type="Texture2D" uid="uid://fpymi1pocg0q" path="res://assets/img/icons/google-icons/file_upload/1x/baseline_file_upload_white_24dp.png" id="6_wixn0"]
+[ext_resource type="Texture2D" uid="uid://dgrh40kbssy8d" path="res://assets/img/icons/eva/folder-outline.svg" id="10_7yir2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c85j"]
 bg_color = Color(0, 0, 0, 0.901961)
@@ -24,7 +25,7 @@ vertical = true
 content_margin_left = 15.0
 content_margin_top = 10.0
 content_margin_right = 15.0
-content_margin_bottom = 10.0
+content_margin_bottom = 15.0
 bg_color = Color(0.211765, 0.223529, 0.247059, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -36,12 +37,6 @@ shadow_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_iuxni"]
 font_size = 21
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d607g"]
-load_path = "res://.godot/imported/baseline_visibility_white_24dp.png-11eeeab0347c29d807f35cfcee0d465a.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nkwdj"]
-load_path = "res://.godot/imported/baseline_visibility_off_white_24dp.png-89a0cba3a3f658f8e6291567fc622065.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yacor"]
 content_margin_left = 5.0
@@ -272,14 +267,10 @@ secret = true
 draw_control_chars = true
 
 [node name="VisibilityBtn" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" instance=ExtResource("6_c62wm")]
-custom_minimum_size = Vector2i(0, 0)
 layout_mode = 2
 offset_left = 216.0
 offset_right = 250.0
 offset_bottom = 34.0
-size_flags_horizontal = 4
-theme_override_icons/checked = SubResource("CompressedTexture2D_d607g")
-theme_override_icons/unchecked = SubResource("CompressedTexture2D_nkwdj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yacor")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yacor")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jfxlg")
@@ -314,9 +305,9 @@ text = "Add"
 [node name="ImportQR" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 436.0
-offset_top = 133.0
+offset_top = 130.0
 offset_right = 716.0
-offset_bottom = 515.0
+offset_bottom = 518.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_u0n6x")
@@ -326,7 +317,7 @@ layout_mode = 2
 offset_left = 15.0
 offset_top = 10.0
 offset_right = 265.0
-offset_bottom = 372.0
+offset_bottom = 373.0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="ImportQR/VBoxContainer"]
@@ -345,6 +336,7 @@ offset_right = 250.0
 offset_bottom = 47.0
 
 [node name="DropArea" type="NinePatchRect" parent="ImportQR/VBoxContainer"]
+unique_name_in_owner = true
 texture_filter = 2
 texture_repeat = 2
 custom_minimum_size = Vector2i(250, 250)
@@ -400,25 +392,22 @@ offset_top = 317.0
 offset_right = 250.0
 offset_bottom = 321.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ImportQR/VBoxContainer"]
+[node name="Button" type="Button" parent="ImportQR/VBoxContainer"]
 layout_mode = 2
 offset_top = 331.0
 offset_right = 250.0
-offset_bottom = 362.0
+offset_bottom = 363.0
+text = "Import from filesystem"
+icon = ExtResource("10_7yir2")
 
-[node name="CancelBtn" type="Button" parent="ImportQR/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-offset_right = 60.0
-offset_bottom = 31.0
-text = "Cancel"
-
-[node name="AddBtn" type="Button" parent="ImportQR/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-offset_left = 211.0
-offset_right = 250.0
-offset_bottom = 31.0
-size_flags_horizontal = 10
-text = "Add"
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(452, 350)
+popup_window = true
+ok_button_text = "Import"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png, *.jpg, *.svg ; Supported Images")
 
 [connection signal="gui_input" from="." to="." method="_on_add_account_container_gui_input"]
 [connection signal="pressed" from="ButtonsBox/VBoxContainer/ImportQrCodeBtn" to="." method="_on_import_qr_code_btn_pressed"]
@@ -427,5 +416,5 @@ text = "Add"
 [connection signal="pressed" from="AddManually/VBoxContainer/HBoxContainer2/CancelBtn" to="." method="_on_cancel_btn_pressed"]
 [connection signal="pressed" from="AddManually/VBoxContainer/HBoxContainer2/AddBtn" to="." method="_on_add_btn_pressed"]
 [connection signal="account_read" from="ImportQR/VBoxContainer/DropArea" to="." method="_on_drop_area_account_read"]
-[connection signal="pressed" from="ImportQR/VBoxContainer/HBoxContainer2/CancelBtn" to="." method="_on_cancel_btn_pressed"]
-[connection signal="pressed" from="ImportQR/VBoxContainer/HBoxContainer2/AddBtn" to="." method="_on_add_btn_pressed"]
+[connection signal="pressed" from="ImportQR/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
