@@ -32,7 +32,7 @@ func set_account(account: Account) -> void:
     %IssuerLogo.set_texture(load("res://assets/img/logos/%s.svg" % 
         [
             account.issuer.to_lower() 
-            if (account.issuer.to_lower()+".svg") in AccountsManager.known_issuers 
+            if (account.issuer.to_lower()) in AccountsManager.known_issuers 
             else "anon"
         ]
     ))

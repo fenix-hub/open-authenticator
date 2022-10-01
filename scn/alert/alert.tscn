@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://crcmoqfatawgn"]
+[gd_scene load_steps=6 format=3 uid="uid://crcmoqfatawgn"]
 
 [ext_resource type="Script" path="res://scn/alert/alert.gd" id="1_awbca"]
-[ext_resource type="Texture2D" uid="uid://b7stks1ca2vv3" path="res://assets/img/icons/eva/alert-circle.svg" id="2_8vuuq"]
-[ext_resource type="Texture2D" uid="uid://pa7pe84wrudl" path="res://assets/img/icons/google-icons/clear/1x/baseline_clear_white_24dp.png" id="3_hffde"]
+[ext_resource type="Texture2D" uid="uid://pa7pe84wrudl" path="res://assets/img/icons/google-icons/clear/1x/baseline_clear_white_24dp.png" id="2_b5jqv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk01s"]
 content_margin_left = 0.0
@@ -67,8 +66,6 @@ custom_minimum_size = Vector2i(20, 0)
 offset_right = 20.0
 offset_bottom = 25.0
 size_flags_horizontal = 4
-texture = ExtResource("2_8vuuq")
-ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Message" type="Label" parent="MarginContainer/HBoxContainer"]
@@ -91,7 +88,7 @@ offset_bottom = 25.0
 size_flags_horizontal = 4
 focus_mode = 0
 mouse_default_cursor_shape = 2
-icon = ExtResource("3_hffde")
+icon = ExtResource("2_b5jqv")
 flat = true
 icon_alignment = 1
 expand_icon = true

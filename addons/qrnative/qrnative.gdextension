@@ -1,0 +1,21 @@
+[configuration]
+
+entry_symbol = "qrnative_init"
+
+[libraries]
+
+windows.x86_64.debug = "res://addons/qrnative/bin/windows/libqrnative.windows.debug.x86_64.dll"
+windows.x86_64.release = "res://addons/qrnative/bin/windows/libqrnative.windows.release.x86_64.dll"
+linux.debug.x86_64 = "res://addons/qrnative/bin/linux/libqrnative.linux.debug.x86_64.so"
+linux.release.x86_64 = "res://addons/qrnative/bin/linux/libqrnative.linux.release.x86_64.so"
+android.debug.arm64-v8a = "res://addons/qrnative/bin/android/libqrnative.android.debug.arm64-v8a.so"
+android.release.arm64-v8a = "res://addons/qrnative/bin/android/libqrnative.android.release.arm64-v8a.so"
+
+[dependencies]
+
+windows.x86_64.debug = "res://addons/qrnative/bin/windows/libqrnative.windows.debug.x86_64.dll"
+windows.x86_64.release = "res://addons/qrnative/bin/windows/libqrnative.windows.release.x86_64.dll"
+linux.debug.x86_64 = "res://addons/qrnative/bin/linux/libqrnative.linux.debug.x86_64.so"
+linux.release.x86_64 = "res://addons/qrnative/bin/linux/libqrnative.linux.release.x86_64.so"
+android.debug.arm64-v8a = "res://addons/qrnative/bin/android/libqrnative.android.debug.arm64-v8a.so"
+android.release.arm64-v8a = "res://addons/qrnative/bin/android/libqrnative.android.release.arm64-v8a.so"

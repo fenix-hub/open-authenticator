@@ -5,35 +5,26 @@ var accounts_file_path: String = "user://.accounts"
 var salt_path: String = "user://.salt"
 var password: PackedByteArray = []
 var accounts: Dictionary = {}
-var known_issuers: PackedStringArray = []
+var known_issuers: PackedStringArray = [
+    "github", "google", "paypal", "facebook", "microsoft"
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     # Generate Salt
-    var file: File = File.new()
-    if not file.file_exists(salt_path):
-        file.open(salt_path, File.WRITE)
+    if not FileAccess.file_exists(salt_path):
+        var file: FileAccess = FileAccess.open(salt_path, FileAccess.WRITE)
         file.store_buffer(Crypto.new().generate_random_bytes(256))
-        file.close()
-
-    load_known_issuers()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     pass
 
-func load_known_issuers() -> void:
-    var dir: Directory = Directory.new()
-    if not dir.open("res://assets/img/logos"):
-        known_issuers = dir.get_files()
-
 func load_accounts(plain_secret: String) -> bool:
     # Read Salt
-    var file: File = File.new()
-    file.open(salt_path, File.READ)
+    var file: FileAccess = FileAccess.open(salt_path, FileAccess.READ)
     var salt: PackedByteArray = file.get_buffer(256)
-    file.close()
     
     self.password = (plain_secret + salt.hex_encode()).sha256_buffer()
     
