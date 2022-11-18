@@ -1,22 +1,10 @@
-# Open Authenticator
+# Open Authenticator /docs
 
-Open source, offline, multiplatform two-factor authenticator software. Alternative to Google and Microsoft authenticator made with Godot Engine 4.
+This is the documentation branch for Open Authenticator hosted on Github Pages.
 
-<div align="center">
-	<img src="accounts.png"/>
-	<img src="import_qr.png"/>
-</div>
-
-## Resources
-- Generate HOTP and TOTP with GDScript 👉 [gdscript.otp](https://github.com/fenix-hub/godot-engine.otp)
-- Read and Write QRCodes with GDScript 👉 [qrnative](https://github.com/fenix-hub/qrnative)
-
-## Roadmap
-
-- [x] Generate offline RFC6238 compliant One Time Passwords for 2factor authentication
-- [x] Offline security for Authenticator accounts
-- [x] Read 2fa QR from image
-- [x] Frontend improvements
-- [ ] Android, iOS and Mac support
-- [ ] Improve offline security
-
+### Settings
+remote_theme: jekyll/minima
+customized layouts:
+	head: added font awesome 
+	header: added link to source code
+	footer: only display author info and repository's description
