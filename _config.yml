@@ -4,3 +4,7 @@ remote_theme: jekyll/minima
 
 minima:
   skin: dark
+
+author:
+  name: Nicolò Santilio
+  email: "nicolo.santilio@outlook.com"
