@@ -1,6 +1,6 @@
 # Build Settings
 markdown: kramdown
-theme: minima
+remote_theme: minima
 
 minima:
   skin: dark
