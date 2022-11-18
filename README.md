@@ -1,4 +1,4 @@
-# Open Authenticator /docs
+# Open Authenticator `/docs`
 
 This is the documentation branch for Open Authenticator hosted on Github Pages.
 
