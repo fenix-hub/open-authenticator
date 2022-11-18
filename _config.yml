@@ -1,3 +1,7 @@
 # Build Settings
 markdown: kramdown
 theme: minima
+
+author:
+  name: Nicolò Santilio
+  email: nicolo.santilio@outlook.com
