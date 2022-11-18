@@ -1,6 +1,6 @@
 # Build Settings
 markdown: kramdown
-remote_theme: minima
+remote_theme: jekyll/minima
 
 minima:
   skin: dark
