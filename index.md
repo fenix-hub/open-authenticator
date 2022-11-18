@@ -3,8 +3,6 @@ layout: home
 title: Open Authenticator
 ---
 
-# Open Authenticator
-
 *Open Authenticator* is an open source, offline, multiplatform two-factor authenticator software. Alternative to Google and Microsoft authenticators made with Godot Engine 4.
 
 <div align="center">
