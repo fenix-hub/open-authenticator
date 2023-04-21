@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://cqlof67jl1gpm"]
 
 [ext_resource type="Script" path="res://scn/main/MarginContainer.gd" id="1_rv7xd"]
-[ext_resource type="Texture2D" uid="uid://ckd6dtu1tlb3p" path="res://assets/img/icons/google-icons/qr_code_scanner/2x/baseline_qr_code_scanner_white_36dp.png" id="2_1g871"]
+[ext_resource type="Texture2D" uid="uid://dgl7qj1ujkfcs" path="res://assets/img/icons/google-icons/qr_code_scanner/2x/baseline_qr_code_scanner_white_36dp.png" id="2_1g871"]
 [ext_resource type="StyleBox" uid="uid://bb8p7t0x5qhla" path="res://assets/styles/button/normal.tres" id="2_dw1xx"]
-[ext_resource type="Texture2D" uid="uid://c2b6helnqj6cw" path="res://assets/img/icons/google-icons/create/2x/baseline_create_white_36dp.png" id="3_68tqj"]
+[ext_resource type="Texture2D" uid="uid://uxek4gtgr07m" path="res://assets/img/icons/google-icons/create/2x/baseline_create_white_36dp.png" id="3_68tqj"]
 [ext_resource type="StyleBox" uid="uid://demuxbgcdpkai" path="res://assets/styles/button/hover.tres" id="3_eujwo"]
 [ext_resource type="Script" path="res://scn/add_account_container/drop_area.gd" id="5_0dbym"]
 [ext_resource type="PackedScene" uid="uid://dxpt4bpwl6ktn" path="res://scn/components/VisibilityBtn.tscn" id="6_c62wm"]
-[ext_resource type="Texture2D" uid="uid://cqme5i25o30jh" path="res://assets/img/droparea.png" id="6_k6vux"]
-[ext_resource type="Texture2D" uid="uid://fpymi1pocg0q" path="res://assets/img/icons/google-icons/file_upload/1x/baseline_file_upload_white_24dp.png" id="6_wixn0"]
-[ext_resource type="Texture2D" uid="uid://dgrh40kbssy8d" path="res://assets/img/icons/eva/folder-outline.svg" id="10_7yir2"]
+[ext_resource type="Texture2D" uid="uid://bd0d78r7ulr1x" path="res://assets/img/droparea.png" id="6_k6vux"]
+[ext_resource type="Texture2D" uid="uid://bcc4kgyklwe01" path="res://assets/img/icons/google-icons/file_upload/1x/baseline_file_upload_white_24dp.png" id="6_wixn0"]
+[ext_resource type="Texture2D" uid="uid://dekquwhd8k2cw" path="res://assets/img/icons/eva/folder-outline.svg" id="10_7yir2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c85j"]
 bg_color = Color(0, 0, 0, 0.901961)
@@ -71,10 +71,6 @@ script = ExtResource("1_rv7xd")
 
 [node name="ButtonsBox" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 435.0
-offset_top = 263.0
-offset_right = 716.0
-offset_bottom = 385.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
@@ -82,14 +78,9 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ButtonsBox"]
 layout_mode = 2
-offset_right = 124.0
-offset_bottom = 122.0
 
 [node name="ImportQrCodeBtn" type="Button" parent="ButtonsBox/VBoxContainer"]
 layout_mode = 2
-offset_left = 16.0
-offset_right = 108.0
-offset_bottom = 92.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = ExtResource("2_dw1xx")
@@ -99,30 +90,18 @@ icon_alignment = 1
 
 [node name="Label" type="Label" parent="ButtonsBox/VBoxContainer"]
 layout_mode = 2
-offset_top = 96.0
-offset_right = 124.0
-offset_bottom = 122.0
 text = "Import QR Code"
 
 [node name="VSeparator" type="VSeparator" parent="ButtonsBox"]
 layout_mode = 2
-offset_left = 144.0
-offset_right = 154.0
-offset_bottom = 122.0
 theme_override_constants/separation = 10
 theme_override_styles/separator = SubResource("StyleBoxLine_hu5e2")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ButtonsBox"]
 layout_mode = 2
-offset_left = 174.0
-offset_right = 281.0
-offset_bottom = 122.0
 
 [node name="AddManuallyBtn" type="Button" parent="ButtonsBox/VBoxContainer2"]
 layout_mode = 2
-offset_left = 7.0
-offset_right = 99.0
-offset_bottom = 92.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = ExtResource("2_dw1xx")
@@ -132,37 +111,22 @@ icon_alignment = 1
 
 [node name="Label2" type="Label" parent="ButtonsBox/VBoxContainer2"]
 layout_mode = 2
-offset_top = 96.0
-offset_right = 107.0
-offset_bottom = 122.0
-grow_horizontal = 2
-grow_vertical = 0
 size_flags_horizontal = 4
 text = "Add manually"
 
 [node name="AddManually" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 2
-offset_left = 397.0
-offset_top = 188.0
-offset_right = 755.0
-offset_bottom = 459.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_u0n6x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AddManually"]
 layout_mode = 2
-offset_left = 15.0
-offset_top = 10.0
-offset_right = 343.0
-offset_bottom = 261.0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="AddManually/VBoxContainer"]
 layout_mode = 2
-offset_right = 328.0
-offset_bottom = 33.0
 text = "New Account"
 label_settings = SubResource("LabelSettings_iuxni")
 horizontal_alignment = 1
@@ -170,107 +134,69 @@ vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="AddManually/VBoxContainer"]
 layout_mode = 2
-offset_top = 43.0
-offset_right = 328.0
-offset_bottom = 47.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AddManually/VBoxContainer"]
 layout_mode = 2
-offset_top = 57.0
-offset_right = 328.0
-offset_bottom = 196.0
 theme_override_constants/separation = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AddManually/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_right = 68.0
-offset_bottom = 139.0
 alignment = 1
 
 [node name="Label" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 68.0
-offset_bottom = 26.0
 size_flags_vertical = 2
 text = "Label:"
 vertical_alignment = 1
 
 [node name="Issuer" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 35.0
-offset_right = 68.0
-offset_bottom = 61.0
 size_flags_vertical = 2
 text = "Issuer:"
 vertical_alignment = 1
 
 [node name="Account" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 71.0
-offset_right = 68.0
-offset_bottom = 97.0
 size_flags_vertical = 2
 text = "Account:"
 vertical_alignment = 1
 
 [node name="Secret" type="Label" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 107.0
-offset_right = 68.0
-offset_bottom = 133.0
 size_flags_vertical = 2
 text = "Secret:"
 vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="AddManually/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2i(250, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-offset_left = 78.0
-offset_right = 328.0
-offset_bottom = 139.0
 alignment = 1
 
 [node name="Label" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_right = 250.0
-offset_bottom = 31.0
 
 [node name="Issuer" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_top = 35.0
-offset_right = 250.0
-offset_bottom = 66.0
 
 [node name="Account" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_top = 70.0
-offset_right = 250.0
-offset_bottom = 101.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 105.0
-offset_right = 250.0
-offset_bottom = 139.0
 alignment = 1
 
 [node name="Secret" type="LineEdit" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_right = 212.0
-offset_bottom = 34.0
 size_flags_horizontal = 3
 secret = true
 draw_control_chars = true
 
 [node name="VisibilityBtn" parent="AddManually/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" instance=ExtResource("6_c62wm")]
 layout_mode = 2
-offset_left = 216.0
-offset_right = 250.0
-offset_bottom = 34.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yacor")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yacor")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jfxlg")
@@ -278,52 +204,31 @@ button_pressed = true
 
 [node name="HSeparator2" type="HSeparator" parent="AddManually/VBoxContainer"]
 layout_mode = 2
-offset_top = 206.0
-offset_right = 328.0
-offset_bottom = 210.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="AddManually/VBoxContainer"]
 layout_mode = 2
-offset_top = 220.0
-offset_right = 328.0
-offset_bottom = 251.0
 
 [node name="CancelBtn" type="Button" parent="AddManually/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_right = 60.0
-offset_bottom = 31.0
 text = "Cancel"
 
 [node name="AddBtn" type="Button" parent="AddManually/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_left = 289.0
-offset_right = 328.0
-offset_bottom = 31.0
 size_flags_horizontal = 10
 text = "Add"
 
 [node name="ImportQR" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = 436.0
-offset_top = 130.0
-offset_right = 716.0
-offset_bottom = 518.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_u0n6x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ImportQR"]
 layout_mode = 2
-offset_left = 15.0
-offset_top = 10.0
-offset_right = 265.0
-offset_bottom = 373.0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="ImportQR/VBoxContainer"]
 layout_mode = 2
-offset_right = 250.0
-offset_bottom = 33.0
 text = "Import QR Code"
 label_settings = SubResource("LabelSettings_iuxni")
 horizontal_alignment = 1
@@ -331,19 +236,13 @@ vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="ImportQR/VBoxContainer"]
 layout_mode = 2
-offset_top = 43.0
-offset_right = 250.0
-offset_bottom = 47.0
 
 [node name="DropArea" type="NinePatchRect" parent="ImportQR/VBoxContainer"]
 unique_name_in_owner = true
 texture_filter = 2
 texture_repeat = 2
-custom_minimum_size = Vector2i(250, 250)
+custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-offset_top = 57.0
-offset_right = 250.0
-offset_bottom = 307.0
 size_flags_vertical = 3
 texture = ExtResource("6_k6vux")
 region_rect = Rect2(0, 0, 400, 400)
@@ -370,17 +269,11 @@ metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ImportQR/VBoxContainer/DropArea/VBoxContainer"]
 layout_mode = 2
-offset_top = 103.0
-offset_right = 250.0
-offset_bottom = 127.0
 texture = ExtResource("6_wixn0")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="ImportQR/VBoxContainer/DropArea/VBoxContainer"]
 layout_mode = 2
-offset_top = 127.0
-offset_right = 250.0
-offset_bottom = 147.0
 text = "Drop QR Here"
 label_settings = SubResource("LabelSettings_ivkki")
 horizontal_alignment = 1
@@ -388,15 +281,11 @@ vertical_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="ImportQR/VBoxContainer"]
 layout_mode = 2
-offset_top = 317.0
-offset_right = 250.0
-offset_bottom = 321.0
 
 [node name="Button" type="Button" parent="ImportQR/VBoxContainer"]
 layout_mode = 2
-offset_top = 331.0
-offset_right = 250.0
-offset_bottom = 363.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Import from filesystem"
 icon = ExtResource("10_7yir2")
 

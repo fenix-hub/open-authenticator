@@ -13,53 +13,53 @@ var icon_enabled: Texture2D = load("res://assets/img/icons/google-icons/lock_ope
 
 var hotp_generator: HOTPGenerator = HOTPGenerator.new(10)
 
-@onready var btn_inital_pos: Vector2 = unlock_btn.get_rect().position
+var btn_inital_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    set_unlock_disabled(true)
+	set_unlock_disabled(true)
+	btn_inital_pos = unlock_btn.get_rect().position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    pass
-
-
+	pass
 
 func unlock(text: String) -> void:
-    %AccessSecret.clear()
-    if text.length() <= 7:
-        unlock_failed.emit("Secret must be at least of 8 characters")
-        return
-    
-    if not AccountsManager.load_accounts(text):
-        unlock_failed.emit("Invalid secret")
-        return
-    
-    emit_signal("accounts_read", AccountsManager.accounts)
-    hide()
+	%AccessSecret.clear()
+	if text.length() <= 7:
+		unlock_failed.emit("Secret must be at least of 8 characters")
+		return
+	
+	if not AccountsManager.load_accounts(text):
+		unlock_failed.emit("Invalid secret")
+		return
+	
+	emit_signal("accounts_read", AccountsManager.accounts)
+	hide()
 
 func _on_button_pressed() -> void:
-    unlock(%AccessSecret.get_text())
+	unlock(%AccessSecret.get_text())
 
 func _on_access_secret_text_submitted(new_text: String) -> void:
-    unlock(new_text)
+	unlock(new_text)
 
 func _on_access_secret_text_changed(new_text: String) -> void:
-    var is_unlocked: bool = new_text.length() > 7
-    if is_unlocked != not unlock_btn.disabled:
-        animate_button(is_unlocked)
+	var is_unlocked: bool = new_text.length() > 7
+	if is_unlocked != not unlock_btn.disabled:
+		animate_button(is_unlocked)
 
 func animate_button(unlocked: bool) -> void:
-    var tween: Tween = get_tree().create_tween().bind_node(self) \
-    .set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-    tween.tween_callback(set_unlock_disabled.bind(not unlocked))
-    tween.tween_property(
-        unlock_btn, "position", btn_inital_pos + Vector2(0, 10), 0.2
-    )
-    tween.tween_property(
-        unlock_btn, "position", btn_inital_pos, 0.2
-    )
+	btn_inital_pos = unlock_btn.get_rect().position
+	var tween: Tween = get_tree().create_tween().bind_node(self) \
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(set_unlock_disabled.bind(not unlocked))
+	tween.tween_property(
+		unlock_btn, "position", btn_inital_pos + Vector2(0, 10), 0.2
+	)
+	tween.tween_property(
+		unlock_btn, "position", btn_inital_pos, 0.2
+	)
 
 func set_unlock_disabled(disabled: bool) -> void:
-    unlock_btn.set_disabled(disabled)
-    unlock_btn.set_button_icon(icon_disabled if disabled else icon_enabled)
+	unlock_btn.set_disabled(disabled)
+	unlock_btn.set_button_icon(icon_disabled if disabled else icon_enabled)
