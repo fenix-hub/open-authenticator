@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.godot.game-mergeDebugResources-9:/values-en/values-en.xml",
+            "map": [
+                {
+                    "source": "D:\\Development\\GodotEngine\\4.x\\open-authenticator\\android\\build\\res\\values-en\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "59",
+                        "endOffsets": "170"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "62",
+                        "endOffsets": "113"
+                    }
+                }
+            ]
+        }
+    ]
+}
